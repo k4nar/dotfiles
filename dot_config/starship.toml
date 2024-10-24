@@ -1,0 +1,59 @@
+add_newline = true
+
+[directory]
+style = "bold #008B8B"
+
+[battery]
+full_symbol = ""
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+# style = "bold #87af00"
+style = "green"
+
+[git_status]
+# style = "bold #87af00"
+style = "green"
+stashed = ''
+
+[git_metrics]
+disabled = true
+added_style = 'green'
+deleted_style = 'blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[nodejs]
+disabled = true
+symbol = " "
+
+[package]
+disabled = true
+# style = "#dc9656"
+style = "#008B8B"
+
+[python]
+symbol = " "
+style = "#008B8B"
+format = "via [${symbol}${pyenv_prefix}${virtualenv}]($style) "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+style = "dimmed white underline"
+format = "[$time]($style) "
+
+[direnv]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[env_var.RUNNING_ENV]
+
