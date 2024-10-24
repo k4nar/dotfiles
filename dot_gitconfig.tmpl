@@ -1,0 +1,88 @@
+[alias]
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        cd = checkout
+        st = status
+        cm = commit
+        am = commit --amend --no-edit
+        fi = commit --fixup
+        ls = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+        pushf = push --force-with-lease
+        hist = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(align:left,60)%(color:yellow)%(refname:short)%(end)%(color:white)%(contents:subject)' --no-merged=HEAD refs/heads
+        wip = !git add -A && git commit -m 'WIP [skip CI]' --no-verify
+
+[commit]
+        {{- if ne .gpgkey "" }}
+        gpgsign = true
+        {{- end }}
+
+[color]
+        ui = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+
+[core]
+        autocrlf = input
+        safecrlf = true
+        excludesfile = ~/.gitignore
+        # use git-delta
+        pager = delta
+
+[credential]
+        helper = cache
+
+[delta]
+        navigate = true    # use n and N to move between diff sections
+
+[diff]
+        colorMoved = default
+
+[fetch]
+        prune = true
+
+[help]
+        autocorrect = 1
+
+[init]
+    defaultbranch = main
+
+[interactive]
+        diffFilter = delta --color-only
+
+[merge]
+        conflictstyle = diff3
+
+[rerere]
+        enabled = true
+
+[pull]
+        ff = only
+
+[push]
+        default = current
+        autoSetupRemote = true
+
+[tag]
+        {{- if ne .gpgkey "" }}
+        forceSignAnnotated = true
+        {{- end }}
+
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+        {{- if ne .gpgkey "" }}
+	signingkey = {{ .gpgkey }}
+        {{- end }}
+
+[url "git@github.com:"]
+        insteadOf = gh:
