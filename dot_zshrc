@@ -1,0 +1,110 @@
+export LANGUAGE=en
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_TIME=fr_FR
+export EDITOR=nvim
+
+source /usr/share/zsh/scripts/zplug/init.zsh
+
+zplug "sorin-ionescu/prezto", use:"init.zsh"
+
+zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' ps-context 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:git:alias' skip 'yes'
+
+zstyle ':prezto:load' pmodule \
+  'editor' \
+  'environment' \
+  'history' \
+  'terminal' \
+  'directory' \
+  'utility' \
+  'completion' \
+  'git' \
+  'autosuggestions' \
+  'syntax-highlighting' \
+  'history-substring-search'
+
+zplug load
+
+path+=("$HOME/.local/bin")
+export PATH
+
+alias e="nvim"
+alias compose="docker-compose"
+alias task="go-task"
+alias vpn-up='sudo tailscale up --exit-node=vpn --exit-node-allow-lan-access=true'
+alias vpn-down='sudo tailscale up --exit-node= --exit-node-allow-lan-access=false'
+
+# Git aliases
+alias gc="git commit"
+alias gca="git commit -a"
+alias ga="git add"
+alias gst="git status"
+
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+
+alias gd="git diff"
+alias gds="git diff --staged"
+
+alias grb="git rebase"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+alias grbm="git rebase origin/main"
+
+alias gcp="git cherry-pick"
+alias gcpc="git cherry-pick --continue"
+alias gcpa="git cherry-pick --abort"
+
+function gcd() {
+    if (($# > 0)); then
+        git checkout $@
+    else
+        git checkout "$(git branch --sort='-authordate:iso8601' | fzf | tr -d '[:space:]')"
+    fi
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# avoid delay when existing insert mode
+export KEYTIMEOUT=10
+
+# bind the Alt+<key> sequences to a noop to avoid conflict with tmux
+# (Alt is considered as ESC in vi mode)
+bindkey "^[p" beep
+bindkey "^[l" beep
+bindkey "^[t" beep
+bindkey "^[r" beep
+bindkey "^[d" beep
+bindkey "^[s" beep
+bindkey "^[ " beep
+# shift + arrow up
+bindkey "^[[1;2A" beep
+
+# re-bind Ctrl+A wich was lost for some reason
+bindkey "^A" beginning-of-line
+
+# Ctrl+Backspace: kill the word backward
+bindkey -M emacs '^H' backward-kill-word
+bindkey -M viins '^H' backward-kill-word
+bindkey -M vicmd '^H' backward-kill-word
+
+# Ctrl+Delete: kill the word forward
+bindkey -M emacs '^[[3;5~' kill-word
+bindkey -M viins '^[[3;5~' kill-word
+bindkey -M vicmd '^[[3;5~' kill-word
+
+# better output for 'time'
+TIMEFMT=$'\n================\nCPU\t%P\nreal\t%*E\nuser\t%*U\nsystem\t%*S'
+
+# for gpg-agent
+export GPG_TTY=$(tty)
+
+# activate direnv
+eval "$(direnv hook zsh)"
+
+# activate starship (prompt)
+eval "$(starship init zsh)"
