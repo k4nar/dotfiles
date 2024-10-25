@@ -5,7 +5,11 @@
 {{- $email := promptStringOnce . "email" "Email address" "yannick.peroux@gmail.com" }}
 {{- $gpgkey := promptStringOnce . "gpgkey" "GPG key to sign commits" "" }}
 
+{{- $use_tmux := promptBoolOnce . "use_tmux" "Use tmux by default" false }}
+
 [data]
     name = "Yannick PÉROUX"
     email = {{ $email | quote }}
     gpgkey = {{ $gpgkey | quote }}
+    
+    use_tmux = {{ $use_tmux }}

@@ -1,0 +1,33 @@
+import = [
+    "~/.config/alacritty/colors.toml",
+]
+
+[window]
+# use left option key as alt key in MacOS
+option_as_alt = "OnlyLeft"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
+
+{{ if .use_tmux }}
+[scrolling]
+history = 0
+
+[shell]
+program = "tmux"
+
+{{- else -}}
+
+[selection]
+save_to_clipboard = true
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mode = "Vi"
+{{ end }}
