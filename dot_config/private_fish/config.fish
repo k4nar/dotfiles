@@ -1,4 +1,7 @@
 if status is-interactive
+    # remove greeting
+    set -g fish_greeting
+
     # map ctrl+backspace to remove previous word
     bind \cH backward-kill-word
 
