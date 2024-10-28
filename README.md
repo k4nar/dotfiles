@@ -31,6 +31,14 @@ Here is a list of of tools I’m using. Some are configured in this repo, others
 
 [`fish`](https://fishshell.com/) is my main shell. I’ve used ZSH for years, so my conf is in this repo as well.
 
+### Neovim
+
+Neovim is configured using [LazyVim](https://www.lazyvim.org/) setup. It is installed automatically.
+
+It can also be used inside VSCode via [vscode-neovim](https://github.com/vscode-neovim/vscode-neovim). It then uses [lazy.nvim](https://github.com/folke/lazy.nvim) as the plugin manager, but not the preset from LazyVim.
+When launched in VSCode, the variable `vim.g.vscode` is set to `true`, this allow for differences in the conf.
+To launch neovim in standalone like if it was in VSCode: `nvim -u ~/.config/nvim/vscode.lua`.
+
 ### Direnv
 
 [Direnv](https://github.com/direnv/direnv) allows to easily set a specific env per directory.
