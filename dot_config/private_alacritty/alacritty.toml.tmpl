@@ -3,10 +3,6 @@ import = [
     "~/.config/alacritty/colors.toml",
 ]
 
-[window]
-# use left option key as alt key in MacOS
-option_as_alt = "OnlyLeft"
-
 [env]
 WINIT_X11_SCALE_FACTOR = "1"
 
@@ -17,7 +13,10 @@ history = 0
 [shell]
 program = "tmux"
 
-{{- else -}}
+[window]
+# use left option key as alt key in MacOS
+option_as_alt = "OnlyLeft"
+{{ end }}
 
 [selection]
 save_to_clipboard = true
@@ -27,13 +26,13 @@ action = "SearchForward"
 key = "F"
 mods = "Control"
 
+# Shift+Esc for Vi mode, allow to select text easily
 [[keyboard.bindings]]
 action = "ToggleViMode"
-key = "Space"
-mods = "Alt"
+key = "Escape"
+mods = "Shift"
 
 [[keyboard.bindings]]
 action = "ToggleViMode"
 key = "Escape"
 mode = "Vi"
-{{ end }}
