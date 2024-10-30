@@ -22,12 +22,12 @@ if status is-interactive
     # require gh (github-cli)
     abbr -a -- gpr 'gh pr create'
 
-    # git checkout + branch picker
+    # git switch + branch picker
     function gcd
         if count $argv > /dev/null
-            git checkout $argv
+            git switch $argv
         else
-            git checkout (git branch --sort='-authordate:iso8601' | fzf | tr -d '[:space:]')
+            git switch (git branch --sort='-authordate:iso8601' | fzf | tr -d '[:space:]')
         end
     end
 end
