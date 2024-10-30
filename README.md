@@ -107,6 +107,10 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
 ### Git
 
 - To clone Github repositories:
+    ```sh
+    git clone gh:user/repo
     ```
-    $ git clone gh:user/repo
+- To restore a branch to the origin version:
+    ```sh
+    git reset --hard @{upstream}
     ```
