@@ -18,6 +18,9 @@ if status is-interactive
     abbr -a -- gcp 'git cherry-pick'
     abbr -a -- gcpc 'git cherry-pick --continue'
     abbr -a -- gcpa 'git cherry-pick --abort'
+    
+    # require gh (github-cli)
+    abbr -a -- gpr 'gh pr create'
 
     # git checkout + branch picker
     function gcd

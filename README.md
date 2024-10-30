@@ -93,6 +93,13 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
 ### Git
 - **[delta](https://github.com/dandavison/delta)**
     Improve Git diff. Included by default in my `.gitconfig`.
+- **[gh](https://cli.github.com/)**
+    Github CLI to create PRs, checkout PRs, etc…
+    ```sh
+    $ gh pr create
+    # alias
+    $ grp
+    ```
 
 
 ## Tips
