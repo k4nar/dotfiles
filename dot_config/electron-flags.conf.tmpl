@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.os "linux" -}}
+--enable-features=WaylandWindowDecorations
+--ozone-platform-hint=auto
+--enable-webrtc-pipewire-capturer
+{{ end }}

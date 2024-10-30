@@ -1,0 +1,7 @@
+{{- if eq .chezmoi.os "linux" -}}
+--ozone-platform=wayland
+
+--ignore-gpu-blocklist
+--enable-zero-copy
+--enable-features=VaapiVideoDecoder
+{{ end }}
