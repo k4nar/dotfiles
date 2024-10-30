@@ -61,7 +61,7 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
 
 ### File utils
 
-- **[ripgrep](https://github.com/BurntSushi/ripgrep)**
+- **[ripgrep](https://github.com/BurntSushi/ripgrep)** —
     A better grep / ack. Faster and with more features than `ag`. Used by other tools (nvim’s Telescope, VSCode…).
     ```sh
     # search <pattern> in current directory recursively
@@ -73,7 +73,7 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
     # filter using glob
     $ rg -g '*.py' <pattern>
     ```
-- **[fd](https://github.com/sharkdp/fd)**
+- **[fd](https://github.com/sharkdp/fd)** —
     Easier and faster alternative to find.
     ```sh
     # list files named `*foo*` in the current directory, recursively
@@ -91,9 +91,9 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
     ```
 
 ### Git
-- **[delta](https://github.com/dandavison/delta)**
+- **[delta](https://github.com/dandavison/delta)** —
     Improve Git diff. Included by default in my `.gitconfig`.
-- **[gh](https://cli.github.com/)**
+- **[gh](https://cli.github.com/)** —
     Github CLI to create PRs, checkout PRs, etc…
     ```sh
     $ gh pr create
