@@ -1,0 +1,58 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# Allow to manage pre-installed apps
+cask_args adopt: true
+
+# Manage App Store apps
+brew "mas"
+
+# Dotfiles
+brew "chezmoi"
+
+# CLI
+cask "alacritty"
+brew "fish"
+brew "direnv"
+brew "starship"
+
+# Dev
+brew "git"
+brew "gh"
+brew "git-delta"
+brew "neovim"
+cask "visual-studio-code"
+
+# Python
+brew "python@3.12"
+brew "uv"
+
+# Utils
+brew "htop"
+brew "wget"
+brew "ripgrep"
+brew "httpie"
+brew "fd"
+
+# System apps
+brew "syncthing", restart_service: true
+cask "karabiner-elements"
+cask "raycast"
+cask "magicquit"
+cask "tailscale"
+
+# Browser
+cask "firefox"
+
+# Multimedia apps
+cask "moonlight"
+cask "nvidia-geforce-now"
+cask "sonos"
+cask "steam"
+cask "whatsapp"
+
+# Other apps
+cask "discord"
+cask "obsidian"
+cask "slack"
