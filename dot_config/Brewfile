@@ -52,6 +52,7 @@ cask "nvidia-geforce-now"
 cask "sonos"
 cask "steam"
 cask "whatsapp"
+cask "meetingbar"  # display next meetings in menubar
 
 # Other apps
 cask "discord"
