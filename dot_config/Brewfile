@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/core"
 tap "homebrew/services"
 
 # Allow to manage pre-installed apps
@@ -37,10 +36,12 @@ brew "fd"
 
 # System apps
 brew "syncthing", restart_service: true
-cask "karabiner-elements"
+cask "karabiner-elements"  # remap keyboard or mouse keys
 cask "raycast"
-cask "magicquit"
+cask "magicquit"  # automatically kill unused apps
 cask "tailscale"
+cask "mos" # better mouse scrolling
+cask "betterdisplay"  # more control over monitors, avoid blurry display
 
 # Browser
 cask "firefox"
@@ -56,3 +57,4 @@ cask "whatsapp"
 cask "discord"
 cask "obsidian"
 cask "slack"
+
