@@ -20,7 +20,10 @@ brew "starship"
 brew "git"
 brew "gh"
 brew "git-delta"
+brew "pre-commit"
 brew "neovim"
+cask "orbstack"
+brew "docker"
 cask "visual-studio-code"
 
 # Python
@@ -42,6 +45,7 @@ cask "magicquit"  # automatically kill unused apps
 cask "tailscale"
 cask "mos" # better mouse scrolling
 cask "betterdisplay"  # more control over monitors, avoid blurry display
+cask "doll"  # display apps with notification badges in the menubar
 
 # Browser
 cask "firefox"
@@ -62,4 +66,3 @@ cask "slack"
 # Fonts
 cask "font-fira-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
-
