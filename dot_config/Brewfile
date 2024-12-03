@@ -58,3 +58,7 @@ cask "discord"
 cask "obsidian"
 cask "slack"
 
+# Fonts
+cask "font-fira-mono-nerd-font"
+cask "font-sauce-code-pro-nerd-font"
+

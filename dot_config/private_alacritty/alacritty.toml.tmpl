@@ -6,6 +6,11 @@ import = [
 [env]
 WINIT_X11_SCALE_FACTOR = "1"
 
+{{ if eq .chezmoi.os "darwin" }}
+[font]
+normal = {family = "FiraMono Nerd Font", style = "Regular"}
+{{ end }}
+
 {{ if .use_tmux }}
 [scrolling]
 history = 0
