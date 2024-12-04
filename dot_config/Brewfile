@@ -66,3 +66,5 @@ cask "slack"
 # Fonts
 cask "font-fira-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
+cask "font-noto-sans"
+cask "font-noto-serif"
