@@ -93,6 +93,8 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
 ### Git
 - **[delta](https://github.com/dandavison/delta)** —
     Improve Git diff. Included by default in my `.gitconfig`.
+- **[git-absorb](https://github.com/tummychow/git-absorb)** —
+    Create fixups for the staged changes. Usage: `git absorb`
 - **[gh](https://cli.github.com/)** —
     Github CLI to create PRs, checkout PRs, etc…
     ```sh
