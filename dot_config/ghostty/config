@@ -1,0 +1,10 @@
+theme = catppuccin-macchiato
+
+copy-on-select = true
+
+macos-titlebar-style = tabs
+
+#quick-terminal-position = left
+#quick-terminal-screen = main
+#quick-terminal-animation-duration = 0
+#keybind = global:cmd+enter=toggle_quick_terminal
