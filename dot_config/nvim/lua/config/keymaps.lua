@@ -9,7 +9,7 @@ local map = vim.keymap.set
 if vim.g.vscode then
   map({ "n", "x" }, "<leader>s", "<cmd>call VSCodeNotify('workbench.action.files.save')<cr>", { desc = "Save" })
   map({ "n", "x" }, "<leader>f", "<cmd>Edit<cr>", { desc = "Open" })
-  map({ "n", "x" }, "<leader><space>", "<cmd>Edit<cr>", { desc = "Open" })
+  map({ "n", "x", "o" }, "<leader><space>", "<cmd>Edit<cr>", { desc = "Open" })
 else
   map({ "n", "x" }, "<leader>s", "<cmd>w<cr>", { desc = "Save" })
   map({ "n", "x" }, "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "Open" })
@@ -50,7 +50,8 @@ map("n", "&", "*N", { silent = true })
 -- Remap commands to use VSCode actions
 if vim.g.vscode then
   map({ "n", "x" }, "<leader>p", "<cmd>call VSCodeNotify('workbench.action.showCommands')<cr>", { desc = "" })
-  map({ "n", "x" }, "<leader>/", "<cmd>call VSCodeNotify('workbench.action.findInFiles')<cr>", { desc = "" })
+  map({ "n", "x" }, "<leader>o", "<cmd>call VSCodeNotify('workbench.action.gotoSymbol')<cr>", { desc = "" })
+  map({ "n", "x" }, "<leader>t", "<cmd>call VSCodeNotify('workbench.action.showAllSymbols')<cr>", { desc = "" })
 
   -- Undo / redo
   map({ "n", "x" }, "u", "<cmd>call VSCodeNotify('undo')<cr>")
