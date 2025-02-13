@@ -11,6 +11,7 @@ return {
       },
     },
     keys = {
+      { "s", false },
       {
         "j",
         mode = { "n", "o", "x" },
