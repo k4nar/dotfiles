@@ -10,7 +10,14 @@
         hist = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(align:left,60)%(color:yellow)%(refname:short)%(end)%(color:white)%(contents:subject)' --no-merged=HEAD refs/heads
         wip = !git add -A && git commit -m 'WIP [skip CI]' --no-verify
 
+[branch]
+        sort = -committerdate
+
+[column]
+        ui = auto
+
 [commit]
+        verbose = true
         {{- if ne .gpgkey "" }}
         gpgsign = true
         {{- end }}
@@ -35,32 +42,45 @@
         autocrlf = input
         safecrlf = true
         excludesfile = ~/.gitignore
+        # spawn a process monitoring changes fro faster `git status`
+        fsmonitor = true
         # use git-delta
         pager = delta
+        untrackedCache = true
 
 [credential]
         helper = cache
 
 [delta]
-        navigate = true    # use n and N to move between diff sections
+        # use n and N to move between diff sections
+        navigate = true
 
 [diff]
+        algorithm = histogram
         colorMoved = default
+        mnemonicPrefix = true
+        renames = true
 
 [fetch]
         prune = true
+        pruneTags = true
 
 [help]
         autocorrect = 1
 
 [init]
-    defaultbranch = main
+        defaultbranch = main
 
 [interactive]
         diffFilter = delta --color-only
 
 [merge]
-        conflictstyle = diff3
+        conflictstyle = zdiff3
+
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
 
 [rerere]
         enabled = true
@@ -73,6 +93,7 @@
         autoSetupRemote = true
 
 [tag]
+        sort = version:refname
         {{- if ne .gpgkey "" }}
         forceSignAnnotated = true
         {{- end }}
