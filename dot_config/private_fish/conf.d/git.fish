@@ -6,6 +6,7 @@ if status is-interactive
     abbr -a -- gau 'git add -u'
     abbr -a -- gs 'git switch'
     abbr -a -- gsc 'git switch -c'
+    abbr -a --set-cursor='%' -- gsm 'git switch -c % origin/main'
     abbr -a -- gst 'git status'
     abbr -a -- gp 'git push'
     abbr -a -- gpf 'git push -f'
