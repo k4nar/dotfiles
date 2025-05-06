@@ -4,6 +4,7 @@ if status is-interactive
     abbr -a --set-cursor='%' -- gcm 'git commit -m "%"'
     abbr -a -- ga 'git add'
     abbr -a -- gau 'git add -u'
+    abbr -a -- gu 'git restore --staged'
     abbr -a -- gs 'git switch'
     abbr -a -- gsc 'git switch -c'
     abbr -a --set-cursor='%' -- gsm 'git switch -c % origin/main'
