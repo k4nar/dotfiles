@@ -34,7 +34,6 @@ export PATH
 
 alias e="nvim"
 alias compose="docker-compose"
-alias task="go-task"
 alias vpn-up='sudo tailscale up --exit-node=vpn --exit-node-allow-lan-access=true'
 alias vpn-down='sudo tailscale up --exit-node= --exit-node-allow-lan-access=false'
 
