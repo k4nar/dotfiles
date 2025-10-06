@@ -1,8 +1,8 @@
 return {
   -- Better text-objects (like `daa`, `cia`, `vaf`, `vic`…)
-  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
+  -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-ai.md
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     version = false,
     -- keys = {
     --   { "a", mode = { "x", "o" } },

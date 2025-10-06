@@ -3,13 +3,13 @@ return {
   -- surrounding characters like brackets or quotes, this allows you
   -- to select the text inside, change or modify the surrounding characters,
   -- and more.
-  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-surround.md
+  -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-surround.md
   -- Examples:
   --   - `gss"'` to change surrounding from " to '
   --   - `gsaw)` to add surrounding ( and ) to word
   --   - `gsawf"` to wrap word with a fuction call
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     event = "VeryLazy",
     opts = {
       mappings = {

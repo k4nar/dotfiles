@@ -1,9 +1,9 @@
 return {
   -- Display indent hints, and provide shortcuts related to current indentation
   -- (ai, ii, (i, etc…)
-  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-indentscope.md
+  -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-indentscope.md
   {
-    "echasnovski/mini.indentscope",
+    "nvim-mini/mini.indentscope",
     version = false,
     event = 'VeryLazy',
     opts = {
