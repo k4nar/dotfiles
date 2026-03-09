@@ -7,7 +7,7 @@ macos-titlebar-style = tabs
 quick-terminal-position = center
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
-keybind = global:cmd+enter=toggle_quick_terminal
+keybind = global:cmd+shift+space=toggle_quick_terminal
 
 # allow to use shift+enter to create a newline
 keybind = shift+enter=text:\x1b\r
