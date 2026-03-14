@@ -1,0 +1,64 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Files
+      "space space": "file_finder::Toggle",
+      "space s": "workspace::Save",
+
+      // Search
+      "space /": "pane::DeploySearch",
+
+      // Buffers
+      "space l": "file_finder::Toggle",
+      "space c": "pane::CloseActiveItem",
+      "space C": "pane::CloseOtherItems",
+      "space q": "pane::CloseAllItems",
+
+      // Split
+      "space |": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+
+      // Navigation
+      "space r": "pane::GoBack",
+      "space i": "pane::GoForward",
+
+      // Git
+      "g a": "git::StageRange",
+      "g u": "git::StageRange", // how to unstage?
+      "g n": "editor::GoToNextChange",
+      "g p": "editor::GoToPreviousChange",
+
+      // Zed shortcuts
+      "space p": "command_palette::Toggle",
+      "space o": "project_symbols::Toggle", // how to use word under cursor?
+      "space t": "project_symbols::Toggle",
+
+      // Sneak (flask-like)
+      "j": "vim::PushSneak",
+
+      // LSP
+      "space d": "editor::GoToDefinition",
+      "space D": "editor::GoToTypeDefinition",
+    },
+  },
+]
