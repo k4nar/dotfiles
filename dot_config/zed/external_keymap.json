@@ -7,15 +7,26 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "Workspace || Editor || Terminal",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      // Move between panes
+      "shift-right": "workspace::ActivatePaneRight",
+      "shift-left": "workspace::ActivatePaneLeft",
+      "shift-up": "workspace::ActivatePaneUp",
+      "shift-down": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "(Workspace || Editor) && !Terminal",
+    "bindings": {
+      // Terminal
+      "shift-enter": "terminal_panel::Toggle",
     },
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      // "j k": "vim::NormalBefore"
+      "shift-enter": "editor::NewlineBelow",
     },
   },
   {
@@ -25,11 +36,14 @@
       "space space": "file_finder::Toggle",
       "space s": "workspace::Save",
 
+      // Terminal
+      "shift-enter": "terminal_panel::Toggle",
+
       // Search
       "space /": "pane::DeploySearch",
 
       // Buffers
-      "space l": "file_finder::Toggle",
+      "space l": "tab_switcher::ToggleAll",
       "space c": "pane::CloseActiveItem",
       "space C": "pane::CloseOtherItems",
       "space q": "pane::CloseAllItems",
@@ -56,9 +70,27 @@
       // Sneak (flask-like)
       "j": "vim::PushSneak",
 
+      // substitute.nvim like replacement
+      "s": "vim::PushReplaceWithRegister",
+      "s s": ["workspace::SendKeystrokes", "g R r"],
+
       // LSP
       "space d": "editor::GoToDefinition",
       "space D": "editor::GoToTypeDefinition",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      // substitute.nvim like replacement
+      "s": "vim::Paste",
+    },
+  },
+  {
+    "context": "MessageEditor",
+    "bindings": {
+      // Insert a newline instead of opening the terminal
+      "shift-enter": "editor::Newline",
     },
   },
 ]

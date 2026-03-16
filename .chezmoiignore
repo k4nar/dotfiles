@@ -1,4 +1,8 @@
 README.md
+
 {{ if ne .chezmoi.os "darwin" }}
 dot_config/Brewfile
 {{ end }}
+
+// Zed config (edited in Zed directly)
+.config/zed/external_keymap.json
