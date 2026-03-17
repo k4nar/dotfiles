@@ -1,0 +1,11 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+[
+  {
+    "label": "Television search",
+    "command": "tv text",
+    "hide": "always",
+    "env": { "EDITOR": "zed" },
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true,
+  },
+]

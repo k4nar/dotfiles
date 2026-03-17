@@ -40,7 +40,11 @@
       "shift-enter": "terminal_panel::Toggle",
 
       // Search
-      "space /": "pane::DeploySearch",
+      // "space /": "pane::DeploySearch",
+      "space /": [
+        "task::Spawn",
+        { "task_name": "Television search", "reveal_target": "center" },
+      ],
 
       // Buffers
       "space l": "tab_switcher::ToggleAll",

@@ -7,3 +7,4 @@ dot_config/Brewfile
 // Zed config (edited in Zed directly)
 .config/zed/external_settings.json
 .config/zed/external_keymap.json
+.config/zed/external_tasks.json
