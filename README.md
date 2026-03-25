@@ -66,10 +66,13 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
     ```sh
     # search <pattern> in current directory recursively
     $ rg <pattern>
+
     # case insensitive
     $ rg -i <pattern>
+
     # search only python files
     $ rg -tpy <pattern>  # or --type py
+
     # filter using glob
     $ rg -g '*.py' <pattern>
     ```
@@ -78,16 +81,43 @@ Dependency with TPM (plugin manager) is optional. See `.tmux.conf` for instructi
     ```sh
     # list files named `*foo*` in the current directory, recursively
     $ fd foo
+    
     # list files ending with .py
     $ fd -e .py
+    
     # exec a command for each found file
     $ fd foo --exec wc -l
+    
     # look for directories
     $ fd --type d
+    
     # look for files
     $ fd --type f
+
     # exact match
     $ fd -g foo
+    ```
+- **[eza](https://github.com/eza-community/eza)**
+    Rich alternative to ls (successor of exa)
+    ```sh
+    # tree view
+    $ eza --tree # or -T
+    $ eza --tree --level=2
+    $ eza --tree --ignore-glob="*.pyc"
+    
+    # same options than ls
+    $ eza -l
+    $ eza -lh
+    
+
+    # git status in listing
+    $ eza -la --git
+
+    # show only directories
+    $ eza -D
+
+    # sort by modification time (newest first)
+    $ eza -la --sort=modified
     ```
 
 ### Git

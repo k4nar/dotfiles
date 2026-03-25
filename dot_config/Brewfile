@@ -39,6 +39,7 @@ brew "httpie"
 brew "fd"  # enhanced find
 brew "television" # Telescope like outside of nvim
 brew "bat" # enhanced cat
+berw "eza" # enhanced ls
 
 # System apps
 brew "syncthing", restart_service: true
